@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- This is the formatting for the page, it includes the java programming that changes the image based
+on the time of day using java's "date" value. It also includes basic formatting for the rest of the text on the page -->
+<head>
+    
+<!--This is the web page's title-->
+    <meta charset="UTF-8">
+    <title>Dynamic Time Webpage</title>
+
+<!--This is the page's text formatting-->
+    <style>
+        body {
+            font: Arial;
+            color: #ffffff;
+            text-align: center;
+            padding-top: 50px;
+        }
+    </style>
+
+<!--This is the java script that changes the displayed page image depending on the time of day-->
+    <script>
+        function changeImageByTime() {
+            const now = new Date();
+            const hour = now.getHours();
+            let imagePath = "";
+
+            if (hour >= 6 && hour < 12) {
+                imagePath = "morning.jpg"; <!-- Morning -->
+            } else if (hour >= 12 && hour < 18) {
+                imagePath = "afternoon.jpg"; <!-- Afternoon -->
+            } else {
+                imagePath = "night.jpg"; <!-- Night -->
+            }
+
+            document.getElementById("timeImage").src = imagePath;
+        }
+
+        window.onload = changeImageByTime;
+    </script>
+</head>
+    
+<!--This is the text body that is displayed on the page, it is formatted with the context at the top of the script-->
+<body>
+    <h1>Assignment 3:Time-Based Image Display Webpage</h1>
+    <h2>Jakob Midthun</h2>
+    <h3>Course: COP4813 - Web Applications Programming</h3>
+    <h4>Major: Computer Science</h4>
+    <p>Welcome to my dynamic webpage!</p>
+
+    <img id="timeImage" src="" alt="Time of Day Image">
+</body>
+</html>
