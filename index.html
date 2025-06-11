@@ -11,13 +11,18 @@ on the time of day using java's "date" value. It also includes basic formatting 
 
 <!--This is the page's text formatting-->
     <style>
-        body {
-           body {
-            font-family: Arial, sans-serif;
-            color: #ffffff;
-            text-align: center;
-            padding-top: 30px;
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
             background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
             align-items: center;
             text-align: center;
             flex-direction: column;
